@@ -1,0 +1,19 @@
+<aura:component controller="DataTableFeedController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+    
+    <aura:attribute name="colMap" type="List" access="public"/>
+    <aura:attribute name="rows" type="List" access="public"/>
+    <aura:attribute name="columnConfig" type="Map" access="public"/>
+    <aura:attribute name="show" type="Boolean" default="false" />
+    <aura:handler name="dtActionClick" event="c:clickedDtAction" action="{!c.tabActionClicked}"/>
+    
+    <!--aura:handler name="init" value="{!this}" action="{!c.getContacts}"/-->
+    
+    <span>
+        <ui:button label="getContacts" press="{!c.getContacts}"/>
+        <aura:if isTrue="{!v.rows.length > 0}">
+            <ldt:datatableDev title="Project Tasks" aura:id="ldtTable" dataRows="{!v.rows}" header="{!v.colMap}" config="{!v.columnConfig}"/>
+        </aura:if>
+    </span>
+  <!-- Edit Task Modal Begin -->
+
+</aura:component>

@@ -1,0 +1,13 @@
+.THIS .title1{
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.THIS .padCls{
+	padding: 5px;
+	font-size: medium;
+}
+
+.THIS .menuaction{
+    /*width:120px;*/
+}
